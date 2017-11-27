@@ -1,7 +1,7 @@
-package com.registrationAndLoginPage.service;
+package com.hospital.service;
 
-import com.registrationAndLoginPage.dao.UserDaoImpl;
-import com.registrationAndLoginPage.entities.User;
+import com.hospital.dao.UserDaoImpl;
+import com.hospital.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

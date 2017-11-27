@@ -1,4 +1,4 @@
-package com.registrationAndLoginPage.entities;
+package com.hospital.entities;
 
 
 public class User {

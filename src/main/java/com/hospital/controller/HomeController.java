@@ -1,7 +1,7 @@
-package com.registrationAndLoginPage.controller;
+package com.hospital.controller;
 
-import com.registrationAndLoginPage.entities.User;
-import com.registrationAndLoginPage.service.UserService;
+import com.hospital.entities.User;
+import com.hospital.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

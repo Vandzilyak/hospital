@@ -1,6 +1,6 @@
-package com.registrationAndLoginPage.dao;
+package com.hospital.dao;
 
-import com.registrationAndLoginPage.entities.User;
+import com.hospital.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
