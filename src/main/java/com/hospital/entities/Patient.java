@@ -1,7 +1,7 @@
 package com.hospital.entities;
 
 
-public class User {
+public class Patient {
 
     private Long id;
     private String name;
@@ -11,10 +11,10 @@ public class User {
     private Integer age;
     private String city;
 
-    public User() {
+    public Patient() {
     }
 
-    public User(Long id, String name, String surname, String email, String password, Integer age, String city) {
+    public Patient(Long id, String name, String surname, String email, String password, Integer age, String city) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -72,18 +72,22 @@ public class User {
         this.age = age;
     }
 
-    public String getCity() { return city; }
+    public String getCity() {
+        return city;
+    }
 
-    public void setCity(String city) { this.city = city; }
+    public void setCity(String city) {
+        this.city = city;
+    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        User user = (User) o;
+        Patient patient = (Patient) o;
 
-        return id != null ? id.equals(user.id) : user.id == null;
+        return id != null ? id.equals(patient.id) : patient.id == null;
     }
 
     @Override

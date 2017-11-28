@@ -8,7 +8,7 @@
 
 <body>
 <h2>Update User</h2>
-<form:form method="post" action="/updateUser" modelAttribute="user">
+<form:form method="post" action="/updatePatient" modelAttribute="patient">
     <div class="table-responsive">
         <table class="table table-bordered" style="width: auto">
             <tr>
