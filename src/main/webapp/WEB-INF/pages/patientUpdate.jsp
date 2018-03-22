@@ -23,20 +23,16 @@
                 <td><form:input type="text" path="surname"/></td>
             </tr>
             <tr>
-                <td>Email :</td>
-                <td><form:input type="text" path="email"/></td>
-            </tr>
-            <tr>
-                <td>Password :</td>
-                <td><form:input type="text" path="password"/></td>
-            </tr>
-            <tr>
                 <td>Age :</td>
                 <td><form:input type="text" path="age"/></td>
             </tr>
             <tr>
                 <td>City :</td>
                 <td><form:input type="text" path="city"/></td>
+            </tr>
+            <tr>
+                <td>Diagnosis :</td>
+                <td><form:input type="text" path="diagnosis"/></td>
             </tr>
             <tr>
                 <td></td>

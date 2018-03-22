@@ -1,28 +1,15 @@
 package com.hospital.entities;
 
 
-public class Patient {
+public class Patient{
 
     private Long id;
     private String name;
     private String surname;
-    private String email;
-    private String password;
     private Integer age;
     private String city;
-
-    public Patient() {
-    }
-
-    public Patient(Long id, String name, String surname, String email, String password, Integer age, String city) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
-        this.password = password;
-        this.age = age;
-        this.city = city;
-    }
+    private String diagnosis;
+    private User user;
 
     public Long getId() {
         return id;
@@ -48,22 +35,6 @@ public class Patient {
         this.surname = surname;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public Integer getAge() {
         return age;
     }
@@ -80,18 +51,19 @@ public class Patient {
         this.city = city;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Patient patient = (Patient) o;
-
-        return id != null ? id.equals(patient.id) : patient.id == null;
+    public String getDiagnosis() {
+        return diagnosis;
     }
 
-    @Override
-    public int hashCode() {
-        return id != null ? id.hashCode() : 0;
+    public void setDiagnosis(String diagnosis) {
+        this.diagnosis = diagnosis;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

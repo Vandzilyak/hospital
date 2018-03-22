@@ -1,5 +1,7 @@
-package com.hospital.dao;
+package com.hospital.dao.impl;
 
+import com.hospital.dao.PatientDao;
+import com.hospital.dao.mapper.PatientMapper;
 import com.hospital.entities.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -23,13 +25,13 @@ public class PatientDaoImpl implements PatientDao {
 
     public void addPatient(Patient patient) {
 
-        String sql = "INSERT INTO patient (name, surname, email, password, age, city) VALUES (?,?,?,?,?,?)";
-        jdbcTemplate.update(sql, patient.getName(), patient.getSurname(), patient.getEmail(), patient.getPassword(), patient.getAge(), patient.getCity());
+        String sql = "INSERT INTO patient (name, surname, age, city, diagnosis) VALUES (?,?,?,?,?)";
+        jdbcTemplate.update(sql, patient.getName(), patient.getSurname(), patient.getAge(), patient.getCity(), patient.getDiagnosis());
     }
 
     public void updatePatient(Patient patient) {
-        String sql = "update patient set name='" + patient.getName() + "', surname='" + patient.getSurname() + "',email='" + patient.getEmail() + "', password='" + patient.getPassword() +
-                "',age='" + patient.getAge() + "',city='" + patient.getCity() + "' where id=" + patient.getId() + "";
+        String sql = "update patient set name='" + patient.getName() + "', surname='" + patient.getSurname() + "',age='" + patient.getAge() + "',city='" + patient.getCity() +
+                "',diagnosis='" + patient.getDiagnosis() + "' where id=" + patient.getId() + "";
         jdbcTemplate.update(sql);
     }
 

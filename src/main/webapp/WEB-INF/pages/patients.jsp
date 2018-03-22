@@ -12,15 +12,15 @@
 <h2>${message}</h2>
 <table class="table table-striped">
 
+    <h2>Welcome ${logInUser.email} </a></h2>
     <thead>
         <tr>
             <th>ID</th>
             <th>NAME</th>
             <th>SURNAME</th>
-            <th>EMAIL</th>
-            <th>PASSWORD</th>
             <th>AGE</th>
             <th>CITY</th>
+            <th>DIAGNOSIS</th>
         </tr>
     </thead>
 
@@ -29,10 +29,9 @@
             <td>${patient.id}</td>
             <td>${patient.name}</td>
             <td>${patient.surname}</td>
-            <td>${patient.email}</td>
-            <td>${patient.password}</td>
             <td>${patient.age}</td>
             <td>${patient.city}</td>
+            <td>${patient.diagnosis}</td>
             <td>
                 <spring:url value="/updatePatient/${patient.id}" var="updatePatient"/>
                 <spring:url value="/deletePatient/${patient.id}" var="deletePatient"/>
@@ -45,7 +44,7 @@
 </table>
 
 <spring:url value="/addPatient" var="patientUrl"/>
-<button class="btn btn-info" onclick="location.href='${patientUrl}'">Add User</button>
+<button class="btn btn-info" onclick="location.href='${patientUrl}'">Add Patient</button>
 
 </body>
 </html>

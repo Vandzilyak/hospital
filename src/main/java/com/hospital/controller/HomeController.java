@@ -1,7 +1,9 @@
 package com.hospital.controller;
 
 import com.hospital.entities.Patient;
+import com.hospital.entities.User;
 import com.hospital.service.PatientService;
+import com.hospital.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -18,14 +21,42 @@ public class HomeController {
     @Autowired
     private PatientService patientService;
 
+    @Autowired
+    private UserService userService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {
+        return "redirect:/loginAndRegistration";
+    }
+
+    @RequestMapping(value = "/loginAndRegistration", method = RequestMethod.GET)
+    public String loginAndRegistration(Model model){
+        model.addAttribute("user", new User());
+        return "loginAndRegistration";
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String login(@ModelAttribute("user") User user,  RedirectAttributes redirectAttributes){
+
+        if(userService.checkUser(user)){
+            redirectAttributes.addFlashAttribute("logInUser",user);
+            return "redirect:/patients";
+        }else {
+            return "redirect:/loginAndRegistration";
+        }
+    }
+//         -----------REGISTRATION--------------
+    @RequestMapping(value = "/registration", method = RequestMethod.POST)
+    public String registration(@ModelAttribute("user") User user){
+        userService.checkUser(user);
+        userService.addUser(user);
         return "redirect:/patients";
     }
 
+
+
     @RequestMapping(value = "/patients", method = RequestMethod.GET)
-    public String getAllPatients(Model model) {
+    public String getAllPatients(Model model, @ModelAttribute("logInUser") User user) {
         List<Patient> patientList = patientService.getAllPatients();
         model.addAttribute("patientList", patientList);
         return "patients";
@@ -36,7 +67,7 @@ public class HomeController {
     public String getPatient(@PathVariable("id") long id, Model model) {
         Patient patient = patientService.getPatientById(id);
         model.addAttribute("patient", patient);
-        return "patients";
+        return "patientProfile";
     }
 
     @RequestMapping(value = "/addPatient", method = RequestMethod.GET)
@@ -70,5 +101,7 @@ public class HomeController {
         patientService.updatePatient(patient);
         return "redirect:patients";
     }
+
+
 
 }

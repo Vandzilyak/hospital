@@ -22,20 +22,16 @@
                 <td><form:input type="text" path="surname" placeholder="surname"/></td>
             </tr>
             <tr>
-                <td>Email :</td>
-                <td><form:input type="text" path="email" placeholder="email"/></td>
-            </tr>
-            <tr>
-                <td>Password :</td>
-                <td><form:input type="text" path="password" placeholder="password"/></td>
-            </tr>
-            <tr>
                 <td>Age :</td>
                 <td><form:input type="text" path="age" placeholder="age"/></td>
             </tr>
             <tr>
                 <td>City :</td>
                 <td><form:input type="text" path="city" placeholder="city"/></td>
+            </tr>
+            <tr>
+                <td>Diagnosis :</td>
+                <td><form:input type="text" path="diagnosis" placeholder="diagnosis"/></td>
             </tr>
             <tr>
                 <td><input class="btn btn-primary btn-sm" type="submit" value="Submit"/></td>

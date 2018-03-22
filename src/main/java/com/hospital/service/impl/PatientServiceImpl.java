@@ -1,7 +1,8 @@
-package com.hospital.service;
+package com.hospital.service.impl;
 
 import com.hospital.dao.PatientDao;
 import com.hospital.entities.Patient;
+import com.hospital.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

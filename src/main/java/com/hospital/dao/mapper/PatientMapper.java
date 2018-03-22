@@ -1,4 +1,4 @@
-package com.hospital.dao;
+package com.hospital.dao.mapper;
 
 import com.hospital.entities.Patient;
 import org.springframework.jdbc.core.RowMapper;
@@ -14,11 +14,9 @@ public class PatientMapper implements RowMapper<Patient> {
         patient.setId(rs.getLong("id"));
         patient.setName(rs.getString("name"));
         patient.setSurname(rs.getString("surname"));
-        patient.setEmail(rs.getString("email"));
-        patient.setPassword(rs.getString("password"));
         patient.setAge(rs.getInt("age"));
         patient.setCity(rs.getString("city"));
-
+        patient.setDiagnosis(rs.getString("diagnosis"));
         return patient;
     }
 }

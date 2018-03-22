@@ -1,19 +1,22 @@
 package com.hospital.dao;
 
 import com.hospital.entities.Patient;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface PatientDao {
-    public void addPatient(Patient patient);
 
-    public void updatePatient(Patient dummy);
+    void addPatient(Patient patient);
 
-    public void deletePatientById(Long id);
+    void updatePatient(Patient dummy);
 
-    public Patient getPatientById(Long id);
+    void deletePatientById(Long id);
 
-    public List<Patient> getAllPatients();
+    Patient getPatientById(Long id);
+
+    List<Patient> getAllPatients();
 
 }
 

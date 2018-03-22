@@ -1,9 +1,53 @@
 package com.hospital.entities;
 
-public class Doctor {
+import java.util.List;
 
-    public String name;
-    public String surname;
-    public String email;
-    public String password;
+
+public class Doctor{
+
+    private Long id;
+    private String name;
+    private String surname;
+    private List<Patient> patients;
+    private User user;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public List<Patient> getPatients() {
+        return patients;
+    }
+
+    public void setPatients(List<Patient> patients) {
+        this.patients = patients;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }
