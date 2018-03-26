@@ -29,7 +29,14 @@ public class HomeController {
         return "redirect:/loginAndRegistration";
     }
 
-    @RequestMapping(value = "/loginAndRegistration", method = RequestMethod.GET)
+    @RequestMapping(value = "test", method = RequestMethod.GET)
+    public String test(Model model){
+        List<Patient> patients = patientService.getAll();
+        model.addAttribute("test", patients);
+        return "test";
+    }
+
+    /*@RequestMapping(value = "/loginAndRegistration", method = RequestMethod.GET)
     public String loginAndRegistration(Model model){
         model.addAttribute("user", new User());
         return "loginAndRegistration";
@@ -103,5 +110,5 @@ public class HomeController {
     }
 
 
-
+*/
 }

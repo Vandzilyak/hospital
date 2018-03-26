@@ -1,6 +1,6 @@
 package com.hospital.service.impl;
 
-import com.hospital.dao.PatientDao;
+import com.hospital.repository.PatientRepository;
 import com.hospital.entities.Patient;
 import com.hospital.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,25 +12,25 @@ import java.util.List;
 public class PatientServiceImpl implements PatientService {
 
     @Autowired
-    private PatientDao patientDao;
+    private PatientRepository patientRepository;
 
-    public void addPatient(Patient patient) {
-        patientDao.addPatient(patient);
+    public Patient addPatient(Patient patient) {
+        return patientRepository.saveAndFlush(patient);
     }
 
-    public void updatePatient(Patient patient) {
-        patientDao.updatePatient(patient);
+    public void delete(long id) {
+        patientRepository.deleteById(id);
     }
 
-    public void deletePatientById(Long id) {
-        patientDao.deletePatientById(id);
+    public Patient getByName(String name) {
+        return patientRepository.findByName(name);
     }
 
-    public Patient getPatientById(Long id) {
-        return patientDao.getPatientById(id);
+    public Patient editPatient(Patient patient) {
+        return patientRepository.saveAndFlush(patient);
     }
 
-    public List<Patient> getAllPatients() {
-        return patientDao.getAllPatients();
+    public List<Patient> getAll() {
+        return patientRepository.findAll();
     }
 }

@@ -1,14 +1,22 @@
 package com.hospital.entities;
 
+import javax.persistence.*;
 import java.util.List;
 
 
 public class Doctor{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO )
     private Long id;
     private String name;
     private String surname;
+
+    @OneToMany(mappedBy = "doctor")
     private List<Patient> patients;
+
+    @OneToOne
+    @JoinColumn(name = "userId")
     private User user;
 
     public Long getId() {

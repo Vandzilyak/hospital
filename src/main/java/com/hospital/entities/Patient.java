@@ -1,15 +1,26 @@
 package com.hospital.entities;
 
 
-public class Patient{
+import javax.persistence.*;
 
+public class Patient {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private String surname;
     private Integer age;
     private String city;
     private String diagnosis;
+
+    @OneToOne
+    @JoinColumn(name = "userId")
     private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "doctorId")
+    private Doctor doctor;
 
     public Long getId() {
         return id;

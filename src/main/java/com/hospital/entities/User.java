@@ -1,10 +1,23 @@
 package com.hospital.entities;
 
+import javax.persistence.*;
 
+@Entity
+@Table(name = "user")
 public class User {
+
+    @Id
+    @GeneratedValue(strategy =GenerationType.AUTO )
     private Long id;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "password")
     private String password;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "roleId")
     private Role role;
 
     public Long getId() {

@@ -1,4 +1,4 @@
-package com.hospital.dao.mapper;
+package com.hospital.repository.mapper;
 
 import com.hospital.entities.Patient;
 import org.springframework.jdbc.core.RowMapper;

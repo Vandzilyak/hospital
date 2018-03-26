@@ -1,18 +1,14 @@
 package com.hospital.service;
 
 import com.hospital.entities.Patient;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 public interface PatientService {
-    public void addPatient(Patient patient);
 
-    public void updatePatient(Patient patient);
-
-    public void deletePatientById(Long id);
-
-    public Patient getPatientById(Long id);
-
-    public List<Patient> getAllPatients();
+    Patient addPatient(Patient patient);
+    void delete(long id);
+    Patient getByName(String name);
+    Patient editPatient(Patient patient);
+    List<Patient> getAll();
 }
