@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public void delete(long id) {
-        userRepository.deleteById(id);
+        userRepository.delete(id);
     }
 
     public User getByEmail(String email) {

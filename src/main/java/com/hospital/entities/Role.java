@@ -1,10 +1,10 @@
 package com.hospital.entities;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
+
+@Entity
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO )

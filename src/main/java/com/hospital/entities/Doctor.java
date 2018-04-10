@@ -1,9 +1,12 @@
 package com.hospital.entities;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 import java.util.List;
 
 
+@Entity
 public class Doctor{
 
     @Id

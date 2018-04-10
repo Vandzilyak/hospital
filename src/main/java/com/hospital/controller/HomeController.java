@@ -1,6 +1,7 @@
 package com.hospital.controller;
 
 import com.hospital.entities.Patient;
+import com.hospital.entities.Role;
 import com.hospital.service.PatientService;
 import com.hospital.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +21,10 @@ public class HomeController {
     @Autowired
     private UserService userService;
 
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {
-        return "redirect:/loginAndRegistration";
+        return "redirect:/test";
     }
 
     @RequestMapping(value = "test", method = RequestMethod.GET)

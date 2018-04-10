@@ -1,5 +1,7 @@
 package com.hospital.entities;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 
 @Entity

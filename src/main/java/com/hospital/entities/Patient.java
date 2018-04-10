@@ -3,6 +3,7 @@ package com.hospital.entities;
 
 import javax.persistence.*;
 
+@Entity
 public class Patient {
 
     @Id

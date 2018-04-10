@@ -19,7 +19,7 @@ public class PatientServiceImpl implements PatientService {
     }
 
     public void delete(long id) {
-        patientRepository.deleteById(id);
+        patientRepository.delete(id);
     }
 
     public Patient getByName(String name) {
