@@ -1,7 +1,6 @@
 package com.hospital.service;
 
 import com.hospital.entities.Patient;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
