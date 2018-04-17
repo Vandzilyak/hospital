@@ -1,15 +1,20 @@
 package com.hospital.controller;
 
+import com.hospital.entities.Doctor;
 import com.hospital.entities.Patient;
 import com.hospital.entities.Role;
+import com.hospital.repository.DoctorRepository;
+import com.hospital.service.DoctorService;
 import com.hospital.service.PatientService;
 import com.hospital.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.jws.WebParam;
 import java.util.List;
 
 @Controller
@@ -21,6 +26,9 @@ public class HomeController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private DoctorService doctorService;
+
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {
@@ -31,6 +39,13 @@ public class HomeController {
     public String test(Model model){
         List<Patient> patients = patientService.getAll();
         model.addAttribute("test", patients);
+        return "test";
+    }
+
+    @RequestMapping(value = "/doctors", method = RequestMethod.GET)
+    public String getDoctors(Model model){
+        List<Doctor> doctors = doctorService.getAll();
+        model.addAttribute("doctors", doctors);
         return "test";
     }
 

@@ -5,9 +5,11 @@ import org.springframework.stereotype.Component;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "role")
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO )
+    @Column
     private Long id;
 
     @Column(name = "name")
