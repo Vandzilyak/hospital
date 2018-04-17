@@ -12,5 +12,6 @@
     <mvc:resources mapping="/resources/**" location="/WEB-INF/resources/"/>
 
     <import resource="spring-data.xml"/>
+    <import resource="spring-security.xml"/>
 
 </beans>
